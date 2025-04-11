@@ -1,0 +1,22 @@
+[
+    {
+      "id": 1,
+      "name": "Dashboard de Vendas",
+      "category": "BI",
+      "price": 99.90,
+      "rating": 4,
+      "image": "assets/dashboard-vendas.png",
+      "description": "Um dashboard interativo para análise de vendas em tempo real.",
+      "checkoutUrl": "https://externo.com/checkout/1"
+    },
+    {
+      "id": 2,
+      "name": "App de Produtividade",
+      "category": "Aplicativos",
+      "price": 49.90,
+      "rating": 5,
+      "image": "assets/app-produtividade.png",
+      "description": "Organize suas tarefas com este app intuitivo.",
+      "checkoutUrl": "https://externo.com/checkout/2"
+    }
+]
