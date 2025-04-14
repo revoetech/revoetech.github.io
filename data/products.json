@@ -1,22 +1,22 @@
 [
     {
       "id": 1,
-      "name": "Dashboard de Vendas",
-      "category": "BI",
+      "name": "Revoe Send",
+      "category": "Aplicativos",
       "price": 99.90,
       "rating": 4,
-      "image": "assets/dashboard-vendas.png",
-      "description": "Um dashboard interativo para análise de vendas em tempo real.",
+      "image": "assets/send.png",
+      "description": "Automação de Envios da Folha de Pagamento para os seus Funcionários",
       "checkoutUrl": "https://externo.com/checkout/1"
     },
     {
       "id": 2,
-      "name": "App de Produtividade",
+      "name": "Revoe Calc",
       "category": "Aplicativos",
       "price": 49.90,
       "rating": 5,
-      "image": "assets/app-produtividade.png",
-      "description": "Organize suas tarefas com este app intuitivo.",
+      "image": "assets/calc.png",
+      "description": "Calcule as folhas de pagamento",
       "checkoutUrl": "https://externo.com/checkout/2"
     }
 ]

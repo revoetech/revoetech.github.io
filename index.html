@@ -3,14 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Marketplace de Aplicações</title>
+  <title>RevoeTech Marketplace</title>
   <link rel="stylesheet" href="css/style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Poppins:wght@600&display=swap" rel="stylesheet">
+  <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header>
+
+  <nav>
+    <img src="assets/logo_revoe_tech_nav.png" alt="RevoeTech" width="15%">
     <h1>Marketplace de Aplicações</h1>
-  </header>
+
+  </nav>
   <main>
     <section class="filters">
       <input type="text" id="search" placeholder="Buscar por nome...">
@@ -18,12 +25,12 @@
         <option value="">Todas as categorias</option>
         <!-- Preenchido via JS -->
       </select>
-      <select id="price">
+      <!-- <select id="price">
         <option value="">Todas as faixas de preço</option>
         <option value="0-50">Até R$50</option>
         <option value="50-100">R$50 - R$100</option>
         <option value="100+">Acima de R$100</option>
-      </select>
+      </select> -->
     </section>
     <section class="products" id="products">
       <!-- Produtos carregados via JS -->
