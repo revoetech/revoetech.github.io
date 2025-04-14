@@ -1,44 +1,223 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
+<!doctype html>
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>RevoeTech Marketplace</title>
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap" rel="stylesheet">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, viewport-fit=cover">
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+
+	<!-- Page Title -->
+	<title>RevoeTech MarketPlace</title>
+  <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon">
+
+	<!-- Compressed Styles -->
+	<link href="css/slides.min.css?41331" rel="stylesheet" type="text/css">
+
+	<!-- Custom Styles -->
+	<!-- <link href="css/custom.css" rel="stylesheet" type="text/css"> -->
+
+	<!-- jQuery 3.3.1 -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+	<!-- Compressed Scripts -->
+	<script src="js/slides.min.js?41331" type="text/javascript"></script>
+
+	<!-- Custom Scripts -->
+	<!-- <script src="js/custom.js" type="text/javascript"></script> -->
+
+	<!-- Fonts and Material Icons -->
+	<link rel="stylesheet" as="font" href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,600,700|Material+Icons"/>
+ 
 </head>
-<body>
+<body class="slides chain simplifiedMobile animated">
+		
+<!-- SVG Library -->
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none">
 
-  <nav>
-    <img src="assets/logo_revoe_tech_nav.png" alt="RevoeTech" width="15%">
-    <h1>Marketplace de Aplicações</h1>
+  <symbol id="facebook" viewBox="0 0 24 24"><path d="M24 1.3v21.3c0 .7-.6 1.3-1.3 1.3h-6.1v-9.3h3.1l.5-3.6h-3.6v-2.2c0-1.1.3-1.8 1.8-1.8h1.9v-3.2c-.3 0-1.5-.1-2.8-.1-2.8 0-4.7 1.7-4.7 4.8v2.7h-3.1v3.6h3.1v9.2h-11.5c-.7 0-1.3-.6-1.3-1.3v-21.4c0-.7.6-1.3 1.3-1.3h21.3c.8 0 1.4.6 1.4 1.3z"/></symbol>
+  
+  <symbol id="instagram" viewBox="0 0 20 20"><circle cx="10" cy="10" r="3.3"/><path d="M13,0H7C2.2,0,0,2.2,0,7v6c0,4.8,2.1,7,7,7h6c4.8,0,7-2.2,7-7V7C20,2.2,17.9,0,13,0z M10,15.1c-2.8,0-5.1-2.3-5.1-5.1 S7.2,4.9,10,4.9s5.1,2.3,5.1,5.1S12.8,15.1,10,15.1z M15.3,5.9c-0.7,0-1.2-0.5-1.2-1.2c0-0.7,0.5-1.2,1.2-1.2s1.2,0.5,1.2,1.2 C16.5,5.3,16,5.9,15.3,5.9z"/></symbol>
+ 
+  <symbol id="linkedin" viewBox="0 0 24 24"><path d="M5.9 21.9h-4.7v-14.2h4.7v14.2zm-2.3-16.1c-1.6 0-2.6-1.1-2.6-2.5s1-2.5 2.7-2.5c1.6 0 2.6 1 2.6 2.5-.1 1.4-1.2 2.5-2.7 2.5zm19.2 16.1h-4.7v-7.6c0-2-.7-3.3-2.3-3.3-1.3 0-2.1.9-2.5 1.7-.1.3-.1.8-.1 1.2v7.9h-4.7v-14.1h4.7v2c.7-.9 1.7-2.3 4.3-2.3 3.1 0 5.5 2.1 5.5 6.4v8.2h-.2z"/></symbol>
 
-  </nav>
-  <main>
-    <section class="filters">
-      <input type="text" id="search" placeholder="Buscar por nome...">
-      <select id="category">
-        <option value="">Todas as categorias</option>
-        <!-- Preenchido via JS -->
-      </select>
-      <!-- <select id="price">
-        <option value="">Todas as faixas de preço</option>
-        <option value="0-50">Até R$50</option>
-        <option value="50-100">R$50 - R$100</option>
-        <option value="100+">Acima de R$100</option>
-      </select> -->
-    </section>
-    <section class="products" id="products">
-      <!-- Produtos carregados via JS -->
-    </section>
-    <section class="pagination" id="pagination">
-      <!-- Botões de paginação -->
-    </section>
-  </main>
-  <script src="js/script.js"></script>
+  <symbol id="whatsapp" viewBox="0 0 512 512"><path d="M256.064 0h-.128c-141.152 0-255.936 114.816-255.936 256 0 56 18.048 107.904 48.736 150.048l-31.904 95.104 98.4-31.456c40.48 26.816 88.768 42.304 140.832 42.304 141.152 0 255.936-114.848 255.936-256s-114.784-256-255.936-256zm148.96 361.504c-6.176 17.44-30.688 31.904-50.24 36.128-13.376 2.848-30.848 5.12-89.664-19.264-75.232-31.168-123.68-107.616-127.456-112.576-3.616-4.96-30.4-40.48-30.4-77.216s18.656-54.624 26.176-62.304c6.176-6.304 16.384-9.184 26.176-9.184 3.168 0 6.016.16 8.576.288 7.52.32 11.296.768 16.256 12.64 6.176 14.88 21.216 51.616 23.008 55.392 1.824 3.776 3.648 8.896 1.088 13.856-2.4 5.12-4.512 7.392-8.288 11.744-3.776 4.352-7.36 7.68-11.136 12.352-3.456 4.064-7.36 8.416-3.008 15.936 4.352 7.36 19.392 31.904 41.536 51.616 28.576 25.44 51.744 33.568 60.032 37.024 6.176 2.56 13.536 1.952 18.048-2.848 5.728-6.176 12.8-16.416 20-26.496 5.12-7.232 11.584-8.128 18.368-5.568 6.912 2.4 43.488 20.48 51.008 24.224 7.52 3.776 12.48 5.568 14.304 8.736 1.792 3.168 1.792 18.048-4.384 35.52z"/></symbol>
+  
+  <symbol id="youtube" viewBox="0 0 24 24"><path d="M23.6 6.3c-.3-1.2-1.4-2.2-2.6-2.3-3-.3-6-.3-9-.3s-6 0-9 .3c-1.2.1-2.3 1.1-2.6 2.3-.4 1.8-.4 3.8-.4 5.7 0 1.9 0 3.9.4 5.7.3 1.2 1.4 2.2 2.6 2.3 3 .3 6 .3 9 .3s6 0 9-.3c1.3-.1 2.3-1.1 2.6-2.4.4-1.7.4-3.7.4-5.6 0-1.9 0-3.9-.4-5.7zm-14.1 9v-6.6l6.5 3.3-6.5 3.3z"/></symbol>
+
+</svg>
+
+<!-- Navigation -->
+<nav class="side pole">
+  <div class="navigation">
+    <ul></ul>
+  </div>
+</nav>
+
+<!-- Slide 1 (#10) -->
+<section class="slide fade-6 kenBurns">
+  <div class="content">
+    <div class="container">
+      <div class="wrap">
+      
+        <div class="fix-7-12">
+          <h1 class="ae-1">RevoeTech - Insira frase bonita aqui</h1>
+          <p class="ae-2"><span class="opacity-8">A Revoe tem suas soluções customizadas e diferentes do mercado.</span></p>
+        </div>  
+        
+      </div>
+    </div>
+  </div>
+  <div class="background" style="background-image:url(assets/img/background/tech_bg1.jpg)"></div>
+</section>
+
+<!-- Popup Gallery -->
+<div class="popup animated" data-popup-id="75-1">
+  <div class="close"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#close"></use></svg></div>
+  <div class="content">
+    <div class="container">
+      <div class="wrap spaces">
+
+        <ul class="slider animated ae-1 fromAbove inlineBlock clickable popupContent disableSelect" data-slider-id="75-1" style="display: inline-block;">
+          <li class="selected">
+            <img src="assets/img/gallery-75-7.jpg" class="rounded" alt="Image"/>
+          </li>
+          <li>
+            <img src="assets/img/gallery-75-6.jpg" class="rounded" alt="Image"/>
+          </li>
+          <li>
+            <img src="assets/img/gallery-75-5.jpg" class="rounded" alt="Image"/>
+          </li>
+          <li>
+            <img src="assets/img/gallery-75-1.jpg" class="rounded" alt="Image"/>
+          </li>
+          <li>
+            <img src="assets/img/gallery-75-3.jpg" class="rounded" alt="Image"/>
+          </li>
+          <li>
+            <img src="assets/img/gallery-75-4.jpg" class="rounded" alt="Image"/>
+          </li>
+          <li>
+            <img src="assets/img/gallery-75-2.jpg" class="rounded" alt="Image"/>
+          </li>
+        </ul>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+<!-- Slide 2 -->
+<section class="slide fade-6 kenBurns">
+  <div class="content">
+    <div class="container">
+      <div class="wrap">
+        <div class="fix-10-12 toCenter">
+          <h1 class="ae-1">A sua solução está aqui</h1>
+          <p class="ae-2"><span class="opacity-8">Veja as nossas soluções de tecnologia para você, ou para a sua empresa.</span></p>
+        </div>
+
+        
+
+
+      
+        <div class="fix-12-12">  
+          <ul class="grid grid-74 later equal margin-top-5">
+            <li class="col-3-12 col-tablet-1-2 col-phablet-1-1 ae-3 fromCenter">
+              <a href="produtos/calc.html" class="box-74">
+                <div class="thumbnail-74">
+                  <img src="assets/img/calc.png" class="wide" alt="Thumbnail"/>
+                </div>
+                <div class="name-74 equalElement table wide">
+                  <div class="cell left top">
+                    <h3 class="">RevoeCalc</h3>
+                    <p class="tiny opacity-6 cropBottom">Simplifique sua gestão! <br> Com o RevoeCalc, calcule preços, custos, salário líquido, CLT x PJ e outras ferramentas práticas para o dia a dia do empresário.</p>
+                  </div>
+                </div>
+              </a>
+            </li>
+            <li class="col-3-12 col-tablet-1-2 col-phablet-1-1 ae-4 fromCenter">
+              <a href="produtos/send.html" class="box-74">
+                <div class="thumbnail-74">
+                  <img src="assets/img/send.png" class="wide" alt="Thumbnail"/>
+                </div>
+                <div class="name-74 equalElement table wide">
+                  <div class="cell left top">
+                    <h3 class="">RevoeSend</h3>
+                    <p class="tiny opacity-6 cropBottom">Automatize seus envios da Folha de Pagamento! <br> Com suporte ao WhatsApp, facilite a gestão de envio de suas Folhas de Pagamento aos funcionários.</p>
+                  </div>
+                </div>
+              </a>
+            </li>
+          </ul>
+        </div>
+                
+      </div>
+    </div>
+  </div>
+  <div class="background" style="background-image:url(assets/img/background/tech_bg2.jpg)"></div>
+</section>
+
+<!-- Slide Final -->
+<section class="slide fade-6 kenBurns">
+  <div class="content">
+    <div class="container">
+      <div class="wrap">
+      
+        <div class="fix-10-12">
+          <h1 class="fix-9-12 huge ae-1">Outra frase final aqui.</h1>
+
+          <ul class="grid equal fixedSpaces margin-top-3">
+            <li class="col-4-12 ae-3">
+              <div class="fix-3-12 equalElement">
+                <h6 class="uppercase opacity-4 margin-top-3 margin-bottom-2">Endereço</h6>
+                <p class="tiny"><a class="opacity-8" href="https://maps.app.goo.gl/T5bypdUUVVW6ZRfb6"><b>Chapecó - SC</b></a></p>
+                <p class="tiny"><a class="opacity-8" href="https://maps.app.goo.gl/T5bypdUUVVW6ZRfb6">Rua Curitiba, 170D Sala 01 | Centro | 89801-341</a></p>
+              </div>
+            </li>
+            <li class="col-4-12 ae-4">
+              <div class="fix-3-12 equalElement">
+                <h6 class="uppercase opacity-4 margin-top-3 margin-bottom-2">Nos Envie um Email</h6>
+                <p class="tiny"><a class="opacity-8" href="mailto:tech@revoecontabil.com.br">tech@revoecontabil.com.br</a></p>
+              </div>
+            </li>
+            <li class="col-4-12 ae-5">
+              <div class="fix-3-12 equalElement">
+                <h6 class="uppercase opacity-4 margin-top-3 margin-bottom-2">Siga nas nossas redes</h6>
+                <ul class="social-circles">
+                  <li><a class="social-instagram" href="https://www.instagram.com/revoe.contabil/"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#instagram"></use></svg></a></li>
+                  <li><a class="social-behance" href="https://www.facebook.com/revoe.contabil/"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#facebook"></use></svg></a></li>
+                  <li><a class="social-googlePlus" href="https://www.youtube.com/@revoecontabilidade-deresultado"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#youtube"></use></svg></a></li>
+                  <li><a class="social-medium" href="https://www.linkedin.com/company/revoe-contabilidade/"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#linkedin"></use></svg></a></li>
+                  <!-- <li><a class="social-medium" href="#"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#spotify"></use></svg></a></li> -->
+                </ul>
+              </div>
+            </li>
+          </ul>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+  <div class="background" style="background-image:url(assets/img/background/tech_bg3.jpg)"></div>
+</section>
+
+<!-- Panel Bottom #13 -->
+<!-- <nav class="panel bottom lastSlideOnly">
+  <div class="sections">
+    <div class="center">
+      <ul class="menu crop">
+        <li><a href="#" target="_blank"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#facebook"></use></svg></a></li>
+        <li><a href="#" target="_blank"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#instagram"></use></svg></a></li>
+        <li><a href="#" target="_blank"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#youtube"></use></svg></a></li>
+      </ul>
+    </div>
+  </div>
+</nav> -->
+
+<!-- Loading Progress Bar -->
+<!-- <div class="progress-bar blue"></div> -->
+<script src="js/products.js"></script>
 </body>
 </html>
