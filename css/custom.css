@@ -1,0 +1,10 @@
+.main_logo {
+    width: 40%; /* Default width for non-mobile */
+  }
+  
+/* Media query for mobile devices (e.g., max-width: 768px) */
+@media only screen and (max-width: 768px) {
+.main_logo {
+    width: 90%;
+}
+}
