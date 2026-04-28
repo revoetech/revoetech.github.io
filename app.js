@@ -247,6 +247,9 @@ function initializeEmptySimulator(){
   document.querySelectorAll('input[data-percent]').forEach(inp => {
     inp.value = formatPercent(0);
   });
+
+  const reformCreditBase = document.getElementById('ps_ref_credit_base');
+  if(reformCreditBase) reformCreditBase.value = formatPercent(100);
 }
 
 document.querySelectorAll('input[data-money]').forEach(inp=>{
@@ -698,7 +701,10 @@ function derivedRates(){
     reform: {
       cbs: priceRate('ps_cbs', getPct('aliq_cbs')),
       ibs: priceRate('ps_ibs', getPct('aliq_ibs')),
-      is:  priceRate('ps_is',  getPct('aliq_is'))
+      is:  priceRate('ps_is',  getPct('aliq_is')),
+      creditBase: priceRate('ps_ref_credit_base', 1),
+      creditCbs: priceRate('ps_cr_cbs', getPct('aliq_cbs')),
+      creditIbs: priceRate('ps_cr_ibs', getPct('aliq_ibs'))
     }
   };
 }
@@ -763,9 +769,13 @@ function priceReform({ tipo, cost, expRate, margRate, ano, rates }){
   const ibsRate = r.ibs * sched.ibsFactor;
   const isRate  = r.is;                  // Imposto Seletivo (por fora)
 
-  // Credits on purchase (broad, 100%)
-  const creditRate = cbsRate + ibsRate;
-  const credits = cost * creditRate;
+  // Credits on purchase. Debit and credit rates can differ from sale rates.
+  const creditBaseRate = Math.max(0, Math.min(1, r.creditBase));
+  const creditCbsRate = r.creditCbs;
+  const creditIbsRate = r.creditIbs * sched.ibsFactor;
+  const creditRate = creditCbsRate + creditIbsRate;
+  const grossCredits = cost * creditBaseRate * creditRate;
+  const credits = Math.min(cost, grossCredits);
   const netCost = cost - credits;
 
   // "Por dentro" divisor now includes the hybrid legacy portion
@@ -792,6 +802,7 @@ function priceReform({ tipo, cost, expRate, margRate, ano, rates }){
     basePrice, finalPrice, expenses, margin, totalTax,
     taxLegacy, taxCbs, taxIbs, taxIs,
     legacyInRate, cbsRate, ibsRate, isRate,
+    creditBaseRate, creditCbsRate, creditIbsRate, creditRate,
     marginEffective: finalPrice > 0 ? margin / finalPrice : 0
   };
 }
@@ -890,6 +901,9 @@ function renderPriceSim(){
       ['Despesas operacionais', reforma.expenses, '#CBD5DF', 'sub'],
       ['Margem de lucro',       reforma.margin,   '#2098D1', 'sub']
     ];
+    if (reforma.creditBaseRate < 0.999 && reforma.cost > 0) {
+      rowsRef.splice(1, 0, ['Custo sem credito', reforma.cost * (1 - reforma.creditBaseRate), '#CBD5DF', 'sub']);
+    }
     if (reforma.taxLegacy > 0) {
       const legLbl = tipo === 'produto' ? 'ICMS residual' : 'ISS residual';
       rowsRef.push([legLbl, reforma.taxLegacy, '#CBD5DF', 'sub']);
@@ -971,6 +985,9 @@ function renderPriceSim(){
   chips.push(`<span class="ps-rate-chip"><span class="chip-k">Créd. COFINS</span> ${formatPercent(c.cofins*100)}</span>`);
   chips.push(`<span class="ps-rate-chip teal"><span class="chip-k">CBS</span> ${formatPercent(r.cbs*100)}</span>`);
   chips.push(`<span class="ps-rate-chip teal"><span class="chip-k">IBS</span> ${formatPercent(r.ibs*sched.ibsFactor*100)}</span>`);
+  chips.push(`<span class="ps-rate-chip teal"><span class="chip-k">Base cred.</span> ${formatPercent(r.creditBase*100)}</span>`);
+  chips.push(`<span class="ps-rate-chip teal"><span class="chip-k">Cred. CBS</span> ${formatPercent(r.creditCbs*100)}</span>`);
+  chips.push(`<span class="ps-rate-chip teal"><span class="chip-k">Cred. IBS</span> ${formatPercent(r.creditIbs*sched.ibsFactor*100)}</span>`);
   if (r.is > 0) chips.push(`<span class="ps-rate-chip teal"><span class="chip-k">IS</span> ${formatPercent(r.is*100)}</span>`);
   chipsEl.innerHTML = chips.join('');
 }
