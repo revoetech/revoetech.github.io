@@ -295,12 +295,16 @@ td .bar{display:inline-block;height:4px;background:linear-gradient(90deg,var(--t
 .price-sim-body{padding:24px}
 
 /* Tabs Product/Service */
-.ps-type-tabs{display:inline-flex;background:var(--surface-2);border:1px solid var(--border);border-radius:10px;padding:4px;gap:2px;margin-bottom:18px}
+.ps-header-controls{display:flex;align-items:center;column-gap:30px;row-gap:10px;flex-wrap:wrap}
+.ps-type-tabs{display:inline-flex;align-items:center;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);border-radius:10px;padding:4px;gap:2px}
 .ps-type-tab{
   appearance:none;border:0;background:transparent;padding:9px 18px;border-radius:8px;
   font:700 12px/1 var(--font);color:var(--text-2);cursor:pointer;transition:all var(--t);
   letter-spacing:.3px;display:flex;align-items:center;gap:8px;
 }
+.price-sim-header .ps-type-tab{color:rgba(255,255,255,.75)}
+.price-sim-header .ps-type-tab:hover{color:#fff;background:rgba(255,255,255,.08)}
+.price-sim-header .ps-type-tab.active{background:#fff;color:var(--navy);box-shadow:0 2px 8px rgba(11,30,49,.18)}
 .ps-type-tab:hover{color:var(--navy)}
 .ps-type-tab.active{background:var(--navy);color:#fff;box-shadow:0 2px 8px rgba(11,30,49,.18)}
 .ps-type-tab.active .ps-tab-dot{background:var(--teal)}
@@ -520,6 +524,15 @@ td .bar{display:inline-block;height:4px;background:linear-gradient(90deg,var(--t
     break-after:avoid;page-break-after:avoid;
   }
   .print-page-start{break-before:page;page-break-before:always}
+  .print-section-block{
+    break-inside:avoid!important;page-break-inside:avoid!important;
+  }
+  .print-section-block.print-page-start{
+    break-before:page!important;page-break-before:always!important;
+  }
+  .print-section-block > .section-head{
+    break-after:avoid!important;page-break-after:avoid!important;
+  }
   .print-keep-section{break-inside:avoid;page-break-inside:avoid}
   .section-head .tag{font-size:9px;letter-spacing:1.5px}
   .section-head .divider{background:#D7E0EA!important}
@@ -567,15 +580,20 @@ td .bar{display:inline-block;height:4px;background:linear-gradient(90deg,var(--t
   .rate-tile .l{font-size:8px;letter-spacing:.8px}
   .rate-tile .v{font-size:16px;letter-spacing:0}
   .rate-tile .s{font-size:8.5px}
-  .price-sim-card{background:#fff!important;border-color:#D7E0EA!important}
-  .price-sim-card{break-inside:auto!important;page-break-inside:auto!important}
+  .price-sim-card{
+    background:#fff!important;border-color:#D7E0EA!important;
+    break-inside:avoid!important;page-break-inside:avoid!important;
+  }
   .price-sim-header{padding:10px 14px!important;border-radius:9px 9px 0 0}
+  .price-sim-header{break-after:avoid!important;page-break-after:avoid!important}
+  .price-sim-body{break-before:avoid!important;page-break-before:avoid!important}
   .price-sim-header::after{display:none}
   .price-sim-title{font-size:13px}
   .price-sim-title .price-icon{width:24px;height:24px;border-radius:7px;font-size:11px}
   .price-sim-desc{font-size:9px;max-width:780px}
   .price-sim-body{padding:10px!important}
-  .ps-type-tabs{margin-bottom:8px}
+  .ps-header-controls{gap:6px}
+  .price-sim-header .ps-type-tabs{padding:3px}
   .ps-type-tab{padding:6px 12px;font-size:9.5px}
   .ps-inputs,.ps-rate-editor{padding:8px!important;margin-bottom:8px}
   .ps-inputs{grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:6px}
@@ -846,7 +864,8 @@ td .bar{display:inline-block;height:4px;background:linear-gradient(90deg,var(--t
 
   </div>
 
-  <div class="section-head print-page-start">
+  <div class="print-section-block print-page-start">
+  <div class="section-head">
     <span class="tag">06 · Simulador de Preço de Venda</span><span class="divider"></span>
     <span class="card-sub">Compare o preço final ao cliente</span>
   </div>
@@ -857,26 +876,27 @@ td .bar{display:inline-block;height:4px;background:linear-gradient(90deg,var(--t
           <div class="price-sim-title"><span class="price-icon">$</span> Formação de preço — Atual vs. Reforma</div>
           <div class="price-sim-desc">Informe custo, despesas, margem, alíquotas de venda e créditos de entrada. Na reforma, CBS/IBS da venda e do crédito podem ser diferentes conforme a tributação da compra.</div>
         </div>
-        <label class="ps-year-select">
-          Cenário reforma:
-          <select id="ps_ano">
-            <option value="2033" selected>2033 — Regime pleno</option>
-            <option value="2032">2032 — Transição 40%</option>
-            <option value="2031">2031 — Transição 30%</option>
-            <option value="2030">2030 — Transição 20%</option>
-            <option value="2029">2029 — Transição 10%</option>
-            <option value="2027">2027 — CBS integral</option>
-          </select>
-        </label>
+        <div class="ps-header-controls">
+          <div class="ps-type-tabs" role="tablist">
+            <button type="button" class="ps-type-tab active" data-tipo="produto"><span class="ps-tab-dot"></span> Produto</button>
+            <button type="button" class="ps-type-tab" data-tipo="servico"><span class="ps-tab-dot"></span> Serviço</button>
+          </div>
+          <label class="ps-year-select">
+            Cenário reforma:
+            <select id="ps_ano">
+              <option value="2033" selected>2033 — Regime pleno</option>
+              <option value="2032">2032 — Transição 40%</option>
+              <option value="2031">2031 — Transição 30%</option>
+              <option value="2030">2030 — Transição 20%</option>
+              <option value="2029">2029 — Transição 10%</option>
+              <option value="2027">2027 — CBS integral</option>
+            </select>
+          </label>
+        </div>
       </div>
     </div>
 
     <div class="price-sim-body">
-      <div class="ps-type-tabs" role="tablist">
-        <button type="button" class="ps-type-tab active" data-tipo="produto"><span class="ps-tab-dot"></span> Produto</button>
-        <button type="button" class="ps-type-tab" data-tipo="servico"><span class="ps-tab-dot"></span> Serviço</button>
-      </div>
-
       <div class="ps-inputs">
         <div class="field"><label>Custo de aquisição</label><input type="text" data-money id="ps_custo" value="R$ 0,00" /></div>
         <div class="field"><label>Despesas operacionais (% sobre venda)</label><input type="text" data-percent id="ps_desp" value="0,00%" /></div>
@@ -994,6 +1014,7 @@ td .bar{display:inline-block;height:4px;background:linear-gradient(90deg,var(--t
         <span id="ps_warn_msg"></span>
       </div>
     </div>
+  </div>
   </div>
 
   <div class="section-head print-page-start">
