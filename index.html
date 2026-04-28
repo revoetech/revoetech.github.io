@@ -325,7 +325,7 @@ td .bar{display:inline-block;height:4px;background:linear-gradient(90deg,var(--t
 .ps-rate-editor-head{display:flex;align-items:flex-end;justify-content:space-between;gap:12px;flex-wrap:wrap}
 .ps-rate-editor-title{font-size:11px;letter-spacing:1.6px;text-transform:uppercase;color:var(--navy);font-weight:800}
 .ps-rate-editor-note{font-size:11px;color:var(--text-3);font-weight:600}
-.ps-rate-grid{display:grid;grid-template-columns:1.15fr 1.15fr .9fr;gap:14px}
+.ps-rate-grid{display:grid;grid-template-columns:1.05fr 1.05fr .9fr .9fr;gap:14px}
 .ps-rate-group{
   display:flex;flex-direction:column;gap:10px;min-width:0;
   padding:12px;background:var(--surface-2);border:1px solid var(--border);border-radius:8px;
@@ -582,7 +582,7 @@ td .bar{display:inline-block;height:4px;background:linear-gradient(90deg,var(--t
   .ps-rate-editor{gap:8px}
   .ps-rate-editor-title{font-size:9px;letter-spacing:1px}
   .ps-rate-editor-note{font-size:8.5px}
-  .ps-rate-grid{grid-template-columns:1.05fr 1.05fr .9fr!important;gap:6px}
+  .ps-rate-grid{grid-template-columns:1fr 1fr .85fr .85fr!important;gap:6px}
   .ps-rate-group{padding:7px!important;gap:6px}
   .ps-rate-group-title{font-size:8px;letter-spacing:.7px}
   .ps-rate-fields{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:5px}
@@ -855,7 +855,7 @@ td .bar{display:inline-block;height:4px;background:linear-gradient(90deg,var(--t
       <div class="price-sim-header-inner">
         <div>
           <div class="price-sim-title"><span class="price-icon">$</span> Formação de preço — Atual vs. Reforma</div>
-          <div class="price-sim-desc">Informe o custo do produto/serviço, despesas, margem e alíquotas. O simulador calcula o preço final ao cliente nos dois regimes com os percentuais definidos abaixo.</div>
+          <div class="price-sim-desc">Informe custo, despesas, margem, alíquotas de venda e créditos de entrada. Na reforma, CBS/IBS da venda e do crédito podem ser diferentes conforme a tributação da compra.</div>
         </div>
         <label class="ps-year-select">
           Cenário reforma:
@@ -887,7 +887,7 @@ td .bar{display:inline-block;height:4px;background:linear-gradient(90deg,var(--t
       <div class="ps-rate-editor">
         <div class="ps-rate-editor-head">
           <div class="ps-rate-editor-title">Alíquotas usadas na formação do preço</div>
-          <div class="ps-rate-editor-note">Estes percentuais afetam apenas o simulador de preço de venda.</div>
+          <div class="ps-rate-editor-note">Em serviços, use a base creditável para separar mão de obra e itens sem crédito.</div>
         </div>
         <div class="ps-rate-grid">
           <div class="ps-rate-group">
@@ -909,11 +909,19 @@ td .bar{display:inline-block;height:4px;background:linear-gradient(90deg,var(--t
             </div>
           </div>
           <div class="ps-rate-group reforma">
-            <div class="ps-rate-group-title">Cenário reforma</div>
+            <div class="ps-rate-group-title">Cenário reforma · venda</div>
             <div class="ps-rate-fields">
               <div class="field"><label>CBS</label><input type="text" data-percent id="ps_cbs" value="0,00%" /></div>
               <div class="field"><label>IBS</label><input type="text" data-percent id="ps_ibs" value="0,00%" /></div>
               <div class="field"><label>IS</label><input type="text" data-percent id="ps_is" value="0,00%" /></div>
+            </div>
+          </div>
+          <div class="ps-rate-group reforma">
+            <div class="ps-rate-group-title">Cenário reforma · créditos</div>
+            <div class="ps-rate-fields">
+              <div class="field"><label>% custo creditável</label><input type="text" data-percent id="ps_ref_credit_base" value="100,00%" /></div>
+              <div class="field"><label>Crédito CBS</label><input type="text" data-percent id="ps_cr_cbs" value="0,00%" /></div>
+              <div class="field"><label>Crédito IBS</label><input type="text" data-percent id="ps_cr_ibs" value="0,00%" /></div>
             </div>
           </div>
         </div>
