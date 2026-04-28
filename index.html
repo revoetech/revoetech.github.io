@@ -441,14 +441,6 @@ td .bar{display:inline-block;height:4px;background:linear-gradient(90deg,var(--t
 }
 @media (max-width:960px){.ps-delta-hint{display:none}}
 
-/* Aliquota chips (visible rates used) */
-.ps-rates-info{
-  display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-top:16px;padding:12px 14px;
-  background:var(--surface-2);border:1px solid var(--border);border-radius:var(--radius-sm);
-  font-size:11px;
-}
-.ps-rates-info .ps-rates-title{font-weight:800;color:var(--navy);text-transform:uppercase;letter-spacing:1px;font-size:10px;display:flex;align-items:center;gap:6px;margin-right:6px}
-.ps-rates-info #ps_rates_chips{display:inline-flex;flex-wrap:wrap;gap:8px;align-items:center}
 .ps-rate-chip{
   display:inline-flex;align-items:center;gap:6px;padding:4px 10px;
   background:var(--surface);border:1px solid var(--border);border-radius:999px;
@@ -632,8 +624,6 @@ td .bar{display:inline-block;height:4px;background:linear-gradient(90deg,var(--t
   .ps-delta-pct{font-size:15px;letter-spacing:0}
   .ps-delta-abs{font-size:8.5px}
   .ps-delta-hint{display:none!important}
-  .ps-rates-info{padding:6px!important;background:#F8FAFC!important;border-color:#D7E0EA!important;gap:5px}
-  .ps-rates-info .ps-rates-title{font-size:8px}
   .ps-rate-chip{font-size:8px;padding:2px 5px}
   .transition-grid{grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr)!important;gap:10px}
   .composition-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:10px}
@@ -1002,11 +992,6 @@ td .bar{display:inline-block;height:4px;background:linear-gradient(90deg,var(--t
             </div>
           </div>
         </div>
-      </div>
-
-      <div class="ps-rates-info">
-        <span class="ps-rates-title">Alíquotas aplicadas</span>
-        <span id="ps_rates_chips"></span>
       </div>
 
       <div class="ps-warn" id="ps_warn" style="display:none">
