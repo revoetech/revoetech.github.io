@@ -962,34 +962,6 @@ function renderPriceSim(){
     }
   }
 
-  // --- Rates info chips ---
-  const chipsEl = document.getElementById('ps_rates_chips');
-  const s = rates.sale, c = rates.credit, r = rates.reform;
-  const sched = PS_SCHEDULE[ano] || PS_SCHEDULE[2033];
-  const chips = [];
-  if (tipo === 'produto') {
-    chips.push(`<span class="ps-rate-chip"><span class="chip-k">ICMS</span> ${formatPercent(s.icms*100)}</span>`);
-  } else {
-    chips.push(`<span class="ps-rate-chip"><span class="chip-k">ISS</span> ${formatPercent(s.iss*100)}</span>`);
-  }
-  chips.push(`<span class="ps-rate-chip"><span class="chip-k">PIS</span> ${formatPercent(s.pis*100)}</span>`);
-  chips.push(`<span class="ps-rate-chip"><span class="chip-k">COFINS</span> ${formatPercent(s.cofins*100)}</span>`);
-  if (tipo === 'produto' && (ipiRate > 0 || s.ipi > 0)) {
-    chips.push(`<span class="ps-rate-chip"><span class="chip-k">IPI</span> ${formatPercent((ipiRate || s.ipi)*100)}</span>`);
-  }
-  if (tipo === 'produto') {
-    chips.push(`<span class="ps-rate-chip"><span class="chip-k">Créd. ICMS</span> ${formatPercent(c.icms*100)}</span>`);
-    if (c.ipi > 0) chips.push(`<span class="ps-rate-chip"><span class="chip-k">Créd. IPI</span> ${formatPercent(c.ipi*100)}</span>`);
-  }
-  chips.push(`<span class="ps-rate-chip"><span class="chip-k">Créd. PIS</span> ${formatPercent(c.pis*100)}</span>`);
-  chips.push(`<span class="ps-rate-chip"><span class="chip-k">Créd. COFINS</span> ${formatPercent(c.cofins*100)}</span>`);
-  chips.push(`<span class="ps-rate-chip teal"><span class="chip-k">CBS</span> ${formatPercent(r.cbs*100)}</span>`);
-  chips.push(`<span class="ps-rate-chip teal"><span class="chip-k">IBS</span> ${formatPercent(r.ibs*sched.ibsFactor*100)}</span>`);
-  chips.push(`<span class="ps-rate-chip teal"><span class="chip-k">Base cred.</span> ${formatPercent(r.creditBase*100)}</span>`);
-  chips.push(`<span class="ps-rate-chip teal"><span class="chip-k">Cred. CBS</span> ${formatPercent(r.creditCbs*100)}</span>`);
-  chips.push(`<span class="ps-rate-chip teal"><span class="chip-k">Cred. IBS</span> ${formatPercent(r.creditIbs*sched.ibsFactor*100)}</span>`);
-  if (r.is > 0) chips.push(`<span class="ps-rate-chip teal"><span class="chip-k">IS</span> ${formatPercent(r.is*100)}</span>`);
-  chipsEl.innerHTML = chips.join('');
 }
 
 // Wire up tabs and year selector
