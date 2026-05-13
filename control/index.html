@@ -1,9 +1,439 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
 <head>
-  <meta http-equiv="refresh" content="0; url=https://revoetech.com">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Revoe Control — Indicadores reais para equipes mais produtivas</title>
+<link rel="icon" type="image/png" href="./imgs/control_favicon.png">
+<link rel="stylesheet" href="./css/style.css">
+<meta name="description" content="Gestão de equipe com dados, não com achismo. Plataforma completa de monitoramento e análise de produtividade, controle de jornada e relatórios. Teste grátis 7 dias." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Instrument+Serif&display=swap" rel="stylesheet">
 </head>
 <body>
-  <h1>CONTROL</h1>
+
+<div class="grain"></div>
+
+<!-- ============ NAV ============ -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="#" class="logo">
+      <img src="./imgs/control_logo_sem_fundo.png" alt="Revoe Control" style="height: 64px; width: auto;">
+    </a>
+    <div class="nav-links">
+      <a href="#como-funciona">Como funciona</a>
+      <a href="#recursos">Recursos</a>
+      <a href="#faq">Perguntas</a>
+    </div>
+    <a href="#trial" class="nav-cta">Teste grátis</a>
+  </div>
+</nav>
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="hero-inner">
+    <div>
+      <div class="badge"><span class="dot"></span> 7 dias grátis · sem cartão</div>
+      <h1>
+        Gestão de equipe com dados,<br>
+        não com <span class="accent">achismo.</span><br>
+      </h1>
+      <p class="lede">
+        O Revoe Control é uma plataforma completa de monitoramento que transforma as atividades da sua equipe no computador em gráficos precisos, métricas de metas e relatórios detalhados.
+      </p>
+      <div class="hero-ctas">
+        <a href="#trial" class="btn btn-primary">
+          Começar teste grátis
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+        <a href="https://wa.me/5549999430398?text=Ol%C3%A1!%20Quero%20saber%20mais%20sobre%20o%20Revoe%20Control." target="_blank" rel="noopener" class="btn btn-whats">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.6 6.32A8.78 8.78 0 0 0 12.05 4C7.17 4 3.2 7.97 3.2 12.85a8.74 8.74 0 0 0 1.18 4.4L3.13 22l4.86-1.27a8.81 8.81 0 0 0 4.07 1.04h.01c4.87 0 8.84-3.97 8.85-8.85a8.78 8.78 0 0 0-2.59-6.27l-.73-.33Zm-5.54 13.6h-.01a7.34 7.34 0 0 1-3.74-1.03l-.27-.16-2.78.73.74-2.71-.17-.28a7.3 7.3 0 0 1-1.12-3.92c0-4.05 3.3-7.35 7.36-7.35a7.31 7.31 0 0 1 7.34 7.36c0 4.05-3.3 7.35-7.35 7.35Zm4.03-5.5c-.22-.11-1.31-.65-1.51-.72-.2-.07-.35-.11-.5.11s-.57.72-.7.87c-.13.15-.26.16-.48.05-.22-.11-.93-.34-1.78-1.1-.66-.59-1.1-1.32-1.23-1.54-.13-.22-.01-.34.1-.45.1-.1.22-.26.33-.39.11-.13.15-.22.22-.37.07-.15.04-.28-.02-.39-.06-.11-.5-1.2-.68-1.65-.18-.43-.36-.37-.5-.38-.13 0-.28 0-.43 0a.83.83 0 0 0-.6.28c-.2.22-.79.77-.79 1.88s.81 2.18.92 2.33c.11.15 1.59 2.43 3.86 3.4.54.23.96.37 1.29.48.54.17 1.03.15 1.42.09.43-.07 1.31-.54 1.5-1.05.18-.52.18-.96.13-1.05-.06-.09-.2-.15-.43-.26Z"/></svg>
+          Falar no WhatsApp
+        </a>
+      </div>
+      <div class="hero-trust">
+        <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Agente Invisível</span>
+        <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Painel 100% Web</span>
+        <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Produtividade Automática</span>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="tv-frame" style="padding: 6px; aspect-ratio: auto;">
+        <div class="tv-status" style="top: -14px; right: 14px;">
+          <span class="live-dot"></span> Monitoramento · ao vivo
+        </div>
+        <div class="tv-screen carousel-container" style="padding: 0; border-radius: 8px; display: block; height: auto;">
+          <img src="./imgs/painel1.png" alt="Dashboard 1" class="carousel-slide active">
+          <img src="./imgs/painel2.png" alt="Dashboard 2" class="carousel-slide">
+          <img src="./imgs/painel3.png" alt="Dashboard 3" class="carousel-slide">
+          <img src="./imgs/painel4.png" alt="Dashboard 4" class="carousel-slide">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROBLEMA ============ -->
+<section class="problem">
+  <div class="container">
+    <div class="reveal">
+      <span class="section-tag">Para gestores e diretores</span>
+      <h2 class="section-title">O fim do <span class="accent">achismo.</span></h2>
+      <p class="section-sub">Identifique gargalos operacionais e perda de tempo antes que virem prejuízo. Tenha total visibilidade sobre o que está acontecendo na sua empresa.</p>
+    </div>
+
+    <div class="problem-grid">
+      <div class="problem-card reveal">
+        <div class="num">01</div>
+        <h3>Visão 360º ao Vivo</h3>
+        <p>Saiba exatamente o que a sua equipe está fazendo agora, acessando de qualquer computador ou celular, em tempo real.</p>
+      </div>
+      <div class="problem-card reveal">
+        <div class="num">02</div>
+        <h3>Dados Concretos</h3>
+        <p>Baseie feedbacks, avaliações de desempenho e decisões em informações reais (Métricas de Uso e Histórico de Screenshots).</p>
+      </div>
+      <div class="problem-card reveal">
+        <div class="num">03</div>
+        <h3>Comparativo de Equipe</h3>
+        <p>Identifique seus melhores talentos comparando os níveis de produtividade entre os colaboradores da sua operação.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SOLUÇÃO / MANIFESTO ============ -->
+<section class="solution">
+  <div class="container solution-inner">
+    <span class="section-tag reveal">Auditoria Inteligente</span>
+    <h2 class="solution-quote reveal">
+      A ferramenta com <span class="underline">Métricas Claras</span> e relatórios precisos do dia de trabalho.
+    </h2>
+  </div>
+</section>
+
+<!-- ============ COMO FUNCIONA ============ -->
+<section class="steps" id="como-funciona">
+  <div class="container">
+    <div class="reveal" style="text-align:center;max-width:720px;margin:0 auto">
+      <span class="section-tag">Como funciona</span>
+      <h2 class="section-title" style="margin-left:auto;margin-right:auto">Simples, rápido e <span class="accent">invisível.</span></h2>
+      <p class="section-sub" style="margin-left:auto;margin-right:auto">O Revoe Control foi desenvolvido para não interferir na rotina do funcionário.</p>
+    </div>
+
+    <div class="steps-grid">
+      <div class="step reveal">
+        <div class="step-num">01</div>
+        <h3>Instale o Agente</h3>
+        <p>Um pequeno programa é instalado silenciosamente no Windows do colaborador, trabalhando em segundo plano.</p>
+      </div>
+      <div class="step reveal">
+        <div class="step-num">02</div>
+        <h3>Captura Automática</h3>
+        <p>O sistema registra a janela ativa, programas em execução, o uso de mouse/teclado e captura telas automaticamente.</p>
+      </div>
+      <div class="step reveal">
+        <div class="step-num">03</div>
+        <h3>Acompanhe no Painel</h3>
+        <p>Acesse o portal na nuvem pelo seu navegador e tenha um Dashboard centralizado sendo atualizado em tempo real.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FEATURES BENTO ============ -->
+<section class="features" id="recursos">
+  <div class="container">
+    <div class="reveal" style="max-width:780px">
+      <span class="section-tag">Recursos</span>
+      <h2 class="section-title">Tudo o que você <span class="accent">precisa saber.</span></h2>
+      <p class="section-sub">Monitoramento ao vivo, histórico de métricas e cálculo automático de produtividade.</p>
+    </div>
+
+    <div class="bento">
+      <!-- Monitoramento destaque -->
+      <div class="bento-card b-1 reveal">
+        <div class="feat-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+        </div>
+        <h4>Monitoramento Ao Vivo e Multi-Tela</h4>
+        <p>Assista à tela dos computadores ao vivo. Acompanhe a atividade de todos os colaboradores simultaneamente em um só painel interativo.</p>
+        <div class="preview">
+          <div class="preview-item">
+            <div class="l">Status de Conexão</div>
+            <div class="v" style="color: #4ade80;">Ao Vivo</div>
+          </div>
+          <div class="preview-item">
+            <div class="l">Colaboradores</div>
+            <div class="v">15 Ativos</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Classificação -->
+      <div class="bento-card b-2 reveal">
+        <div class="feat-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20V10M18 20V4M6 20v-4"/></svg>
+        </div>
+        <h4>Classificação Inteligente</h4>
+        <p>O sistema categoriza automaticamente as horas registradas entre atividades úteis e distrações. Acompanhe os indicadores visualmente.</p>
+        <div class="playlist">
+          <div class="pl-row">
+            <div class="ico" style="color: #4ade80;"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg></div>
+            <div class="name">Produtivo (Excel, Word)</div>
+            <div class="dur">6h 15m</div>
+          </div>
+          <div class="pl-row">
+            <div class="ico" style="color: #ef4444;"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg></div>
+            <div class="name">Improdutivo (Redes Sociais)</div>
+            <div class="dur">1h 30m</div>
+          </div>
+          <div class="pl-row">
+            <div class="ico" style="color: #94a3b8;"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg></div>
+            <div class="name">Ocioso (Sem Uso)</div>
+            <div class="dur">45m</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Screenshots -->
+      <div class="bento-card b-3 reveal">
+        <div class="feat-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+        </div>
+        <h4>Histórico de Screenshots</h4>
+        <p>O sistema tira prints periodicamente e os organiza em uma galeria interativa para fácil auditoria e conferência.</p>
+      </div>
+
+      <!-- Produtividade -->
+      <div class="bento-card b-4 reveal">
+        <div class="feat-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+        </div>
+        <h4>Cálculo Automático</h4>
+        <p>Separação automática de horas trabalhadas, horas improdutivas e vazias, gerando métricas exatas de performance.</p>
+      </div>
+
+      <!-- Departamentos -->
+      <div class="bento-card b-5 reveal">
+        <div class="feat-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <h4>Gestão por Grupos</h4>
+        <p>Organize as jornadas de trabalho separando por departamentos, como Financeiro, DP, Comercial e TI.</p>
+      </div>
+
+      <!-- Relatórios -->
+      <div class="bento-card b-6 reveal">
+        <div class="feat-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+        </div>
+        <h4>Relatórios em Lote</h4>
+        <p>Emita e exporte relatórios de produtividade em PDF ou Excel de dezenas de funcionários simultaneamente.</p>
+      </div>
+
+      <!-- Controle de Jornada -->
+      <div class="bento-card b-7 reveal">
+        <div class="feat-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        </div>
+        <h4>Para o RH e DP</h4>
+        <p>Controle rigoroso de horas extras sem depender de ponto manual. Saiba exatamente o primeiro e o último registro do dia.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ANTES x DEPOIS ============ -->
+<section class="compare">
+  <div class="container">
+    <div class="reveal" style="max-width:720px">
+      <span class="section-tag">A diferença</span>
+      <h2 class="section-title">Como você vê <span class="accent">sua equipe.</span></h2>
+    </div>
+
+    <div class="compare-grid">
+      <div class="compare-col before reveal">
+        <h3>Antes</h3>
+        <div class="big" style="color:rgba(255,255,255,0.7)">Trabalho no escuro.</div>
+        <ul>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg> Falta de controle em home office ou presencial</li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg> Dificuldade de identificar quem realmente produz</li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg> Fechamento de horas extras confuso e demorado</li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg> Feedbacks baseados em impressões e achismos</li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg> Preocupações com uso indevido de equipamentos</li>
+        </ul>
+      </div>
+
+      <div class="compare-col after reveal">
+        <h3>Com Revoe Control</h3>
+        <div class="big">Controle absoluto.</div>
+        <ul>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Visibilidade total do que está sendo feito</li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Produtividade mensurada e separada automaticamente</li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Relatórios de jornada e ponto precisos e exatos</li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Decisões de RH baseadas em gráficos reais</li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Análise visual de toda a jornada do colaborador</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TIPOS DE CONTEÚDO ============ -->
+<section class="content-types">
+  <div class="container">
+    <div class="reveal" style="max-width:720px">
+      <span class="section-tag">Ideal Para</span>
+      <h2 class="section-title">Qualquer empresa que precise <span class="accent">de produtividade.</span></h2>
+      <p class="section-sub">Solução focada em monitoramento, otimização de tempo e segurança das operações.</p>
+    </div>
+    <div class="pills">
+      <div class="pill reveal"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg> Home Office e Híbrido</div>
+      <div class="pill reveal"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg> Contabilidade e Advocacia</div>
+      <div class="pill reveal"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg> BPOs e Terceirização</div>
+      <div class="pill reveal"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg> Televendas e Atendimento</div>
+      <div class="pill reveal"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg> Suporte de TI</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROVA / NÚMEROS ============ -->
+<section class="proof">
+  <div class="container proof-grid">
+    <div class="stat reveal">
+      <div class="num">100%</div>
+      <div class="lbl">Painel na nuvem</div>
+    </div>
+    <div class="stat reveal">
+      <div class="num">Ao Vivo</div>
+      <div class="lbl">Monitoramento</div>
+    </div>
+    <div class="stat reveal">
+      <div class="num">7 dias</div>
+      <div class="lbl">Trial gratuito</div>
+    </div>
+    <div class="stat reveal">
+      <div class="num">Excel</div>
+      <div class="lbl">Exportação em Lote</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="faq" id="faq">
+  <div class="container">
+    <div class="reveal" style="text-align:center;max-width:720px;margin:0 auto">
+      <span class="section-tag">Perguntas frequentes</span>
+      <h2 class="section-title" style="margin-left:auto;margin-right:auto">Tire todas as <span class="accent">suas dúvidas.</span></h2>
+    </div>
+
+    <div class="faq-grid">
+      <details class="reveal" open>
+        <summary>Quais sistemas operacionais são suportados? <span class="chev">+</span></summary>
+        <p>O Agente de monitoramento é perfeitamente compatível com computadores rodando Windows 10 e Windows 11, atendendo a grande maioria dos ambientes corporativos.</p>
+      </details>
+      <details class="reveal">
+        <summary>O software deixa o computador lento? <span class="chev">+</span></summary>
+        <p>Não. O Agente do Revoe Control foi otimizado para consumir o mínimo de processamento e memória, garantindo que o colaborador trabalhe normalmente sem travamentos.</p>
+      </details>
+      <details class="reveal">
+        <summary>Posso comparar departamentos diferentes? <span class="chev">+</span></summary>
+        <p>Sim. O painel permite agrupar os colaboradores por setores, como Comercial, Financeiro ou Suporte, facilitando o acompanhamento de metas e o comparativo de performance de cada área.</p>
+      </details>
+      <details class="reveal">
+        <summary>Como o sistema mede o que é produtivo ou improdutivo? <span class="chev">+</span></summary>
+        <p>O sistema classifica o uso baseando-se na janela e no programa ativo. Você define categorias, e ele calcula automaticamente as horas produtivas (ex: Excel, ERP), horas improdutivas (ex: Redes Sociais) e até mesmo detecta o tempo ocioso (sem interação de mouse/teclado).</p>
+      </details>
+      <details class="reveal">
+        <summary>Posso exportar os dados para fechamento da folha? <span class="chev">+</span></summary>
+        <p>Com certeza. Você pode emitir relatórios diários ou mensais de produtividade e controle de jornada (horas extras) e exportar de dezenas de funcionários de uma só vez, em lotes (ZIP) com arquivos em PDF ou Excel.</p>
+      </details>
+      <details class="reveal">
+        <summary>Preciso de cartão de crédito para testar? <span class="chev">+</span></summary>
+        <p>Não. Você cadastra sua empresa, baixa o agente e testa por 7 dias com todas as funcionalidades liberadas. Só assina se a ferramenta realmente fizer sentido para sua operação.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA FINAL ============ -->
+<section class="cta-final" id="trial">
+  <div class="cta-final-inner">
+    <span class="section-tag reveal">Hora de assumir o controle</span>
+    <h2 class="reveal" style="margin-top:20px">
+      Assuma o controle da produtividade da sua empresa <span class="accent">hoje mesmo.</span>
+    </h2>
+    <p class="reveal">Cadastre-se e faça um teste gratuito de 7 dias (Sem necessidade de cartão de crédito). Ou converse com a gente no WhatsApp para alinhar o plano ideal.</p>
+    <div class="btns reveal">
+      <a href="https://revoetech.com/control/home" class="btn btn-primary">
+        Começar teste grátis
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+      <a href="https://wa.me/5549999430398?text=Ol%C3%A1!%20Quero%20saber%20mais%20sobre%20o%20Revoe%20Control." target="_blank" rel="noopener" class="btn btn-whats">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.6 6.32A8.78 8.78 0 0 0 12.05 4C7.17 4 3.2 7.97 3.2 12.85a8.74 8.74 0 0 0 1.18 4.4L3.13 22l4.86-1.27a8.81 8.81 0 0 0 4.07 1.04h.01c4.87 0 8.84-3.97 8.85-8.85a8.78 8.78 0 0 0-2.59-6.27l-.73-.33Zm-5.54 13.6h-.01a7.34 7.34 0 0 1-3.74-1.03l-.27-.16-2.78.73.74-2.71-.17-.28a7.3 7.3 0 0 1-1.12-3.92c0-4.05 3.3-7.35 7.36-7.35a7.31 7.31 0 0 1 7.34 7.36c0 4.05-3.3 7.35-7.35 7.35Zm4.03-5.5c-.22-.11-1.31-.65-1.51-.72-.2-.07-.35-.11-.5.11s-.57.72-.7.87c-.13.15-.26.16-.48.05-.22-.11-.93-.34-1.78-1.1-.66-.59-1.1-1.32-1.23-1.54-.13-.22-.01-.34.1-.45.1-.1.22-.26.33-.39.11-.13.15-.22.22-.37.07-.15.04-.28-.02-.39-.06-.11-.5-1.2-.68-1.65-.18-.43-.36-.37-.5-.38-.13 0-.28 0-.43 0a.83.83 0 0 0-.6.28c-.2.22-.79.77-.79 1.88s.81 2.18.92 2.33c.11.15 1.59 2.43 3.86 3.4.54.23.96.37 1.29.48.54.17 1.03.15 1.42.09.43-.07 1.31-.54 1.5-1.05.18-.52.18-.96.13-1.05-.06-.09-.2-.15-.43-.26Z"/></svg>
+        Falar no WhatsApp
+      </a>
+    </div>
+    <p class="micro">7 dias grátis · sem cartão · cancele quando quiser</p>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="foot">
+    <div class="logo">
+      <img src="./imgs/control_logo_sem_fundo.png" alt="Revoe Control" style="height: 80px; width: auto;">
+    </div>
+    <div class="foot-meta">
+      © 2026 Revoe Tech · Atendimento <a href="https://wa.me/5549999430398">(49) 99943-0398</a>
+    </div>
+  </div>
+</footer>
+
+<!-- ============ WHATS FLOATING ============ -->
+<a href="https://wa.me/5549999430398?text=Ol%C3%A1!%20Quero%20saber%20mais%20sobre%20o%20Revoe%20Control." target="_blank" rel="noopener" class="whats-float" aria-label="Falar no WhatsApp">
+  <span class="ring"></span>
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.6 6.32A8.78 8.78 0 0 0 12.05 4C7.17 4 3.2 7.97 3.2 12.85a8.74 8.74 0 0 0 1.18 4.4L3.13 22l4.86-1.27a8.81 8.81 0 0 0 4.07 1.04h.01c4.87 0 8.84-3.97 8.85-8.85a8.78 8.78 0 0 0-2.59-6.27l-.73-.33Zm-5.54 13.6h-.01a7.34 7.34 0 0 1-3.74-1.03l-.27-.16-2.78.73.74-2.71-.17-.28a7.3 7.3 0 0 1-1.12-3.92c0-4.05 3.3-7.35 7.36-7.35a7.31 7.31 0 0 1 7.34 7.36c0 4.05-3.3 7.35-7.35 7.35Zm4.03-5.5c-.22-.11-1.31-.65-1.51-.72-.2-.07-.35-.11-.5.11s-.57.72-.7.87c-.13.15-.26.16-.48.05-.22-.11-.93-.34-1.78-1.1-.66-.59-1.1-1.32-1.23-1.54-.13-.22-.01-.34.1-.45.1-.1.22-.26.33-.39.11-.13.15-.22.22-.37.07-.15.04-.28-.02-.39-.06-.11-.5-1.2-.68-1.65-.18-.43-.36-.37-.5-.38-.13 0-.28 0-.43 0a.83.83 0 0 0-.6.28c-.2.22-.79.77-.79 1.88s.81 2.18.92 2.33c.11.15 1.59 2.43 3.86 3.4.54.23.96.37 1.29.48.54.17 1.03.15 1.42.09.43-.07 1.31-.54 1.5-1.05.18-.52.18-.96.13-1.05-.06-.09-.2-.15-.43-.26Z"/></svg>
+</a>
+
+<script>
+  // Reveal on scroll
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('in');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // Nav background on scroll
+  const nav = document.querySelector('.nav');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 40) {
+      nav.style.background = 'rgba(10,24,40,0.85)';
+      nav.style.padding = '14px 32px';
+    } else {
+      nav.style.background = 'rgba(10,24,40,0.55)';
+      nav.style.padding = '20px 32px';
+    }
+  });
+
+  // Carousel logic
+  const slides = document.querySelectorAll('.carousel-slide');
+  if (slides.length > 0) {
+    let currentSlide = 0;
+    setInterval(() => {
+      slides[currentSlide].classList.remove('active');
+      currentSlide = (currentSlide + 1) % slides.length;
+      slides[currentSlide].classList.add('active');
+    }, 2000);
+  }
+</script>
+
 </body>
 </html>
